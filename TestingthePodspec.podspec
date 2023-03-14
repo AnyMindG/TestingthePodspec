@@ -24,15 +24,14 @@ Pod::Spec.new do |s|
 
     s.platform          = :ios
 
-    s.source            = { :http => 'https://github.com/AnyMindG/TestingthePodspec.git'}
+    s.source            = { :http => 'https://github.com/AnyMindG/AnyManagerSDK/releases/download/5000.22.0/PokktAds.zip'}
 
-    s.vendored_frameworks = 'PokktSDK.xcframework'
+    s.source_files = 'PokktAds/*.{h,m,swift}' 
+    s.vendored_frameworks = 'PokktAds/PokktSDK.xcframework'
 
     s.ios.deployment_target = '11.0'
 
     s.static_framework = true
-
-    s.swift_version = '5.0'
     
     s.frameworks = "CoreData", "MediaPlayer", "Foundation", "UIKit", "CoreTelephony", "AdSupport", "CoreGraphics", "CoreMotion", "MessageUI", "EventKit", "EventKitUI", "CoreLocation", "AVFoundation", "CFNetwork", "StoreKit", "WebKit", "PassKit" , "AudioToolbox" , "CoreMedia" , "JavaScriptCore" , "CoreServices" , "SafariServices" , "Social" , "AppTrackingTransparency" , "MobileCoreServices"
 
@@ -42,5 +41,9 @@ Pod::Spec.new do |s|
     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     
+ 
+    s.dependency "Google-Mobile-Ads-SDK"
+    s.dependency "PersonalizedAdConsent"
+   
   
 end
